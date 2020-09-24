@@ -1,5 +1,4 @@
 
-
 /**
  * @copyright (c) 2020, Kartik Venkat, Nidhi Bhojak
  *
@@ -45,16 +44,15 @@
  */
 
 #include <iostream>
-#include <lib.hpp>
 #include <vector>
+#include <lib.hpp>
 
 /**
   *  @brief main function.
   *  @param none
   *  @return none
   */
-int main()
-{
+int main() {
   double kp = 10;
   double ki = 2;
   double kd = 5;
@@ -73,16 +71,24 @@ int main()
 
   CurrentError = obj.calculateCurrentError(TargetVelocity, ActualVelocity);
 
-  AccumulatedError = obj.calculateAccumulatedError(CurrentError, AccumulatedErrors);
+  AccumulatedError = obj.calculateAccumulatedError(CurrentError,
+                                                   AccumulatedErrors);
 
-  PID_Output = obj.calculatePID(CurrentError, PreviousError, AccumulatedError);
+  PID_Output = obj.calculatePID(CurrentError, PreviousError,
+                                AccumulatedError);
 
 //  Display the results of the implementation.
   std::cout << "The target set-point is " << TargetVelocity <<
        " and the Actual Velocity is " << ActualVelocity << ".\n";
-  std::cout << "The current error of the system is :" << CurrentError << "\n";
-  std::cout << "The accumulated error of the system is :" << AccumulatedError << "\n";
-  std::cout << "The output velocity of the PID controller is :" << PID_Output << "\n";
+
+  std::cout << "The current error of the system is :" <<
+       CurrentError << "\n";
+
+  std::cout << "The accumulated error of the system is :" <<
+       AccumulatedError << "\n";
+
+  std::cout << "The output velocity of the PID controller is :" <<
+       PID_Output << "\n";
 
   return 0;
 }

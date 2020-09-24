@@ -83,7 +83,7 @@ class ComputePID{
    * @return <Accumulated error of the system>                      // EDIT this..
    */
   double calculateAccumulatedError(double  CurrentError,
-                                   std::vector<double >AccumulatedErrors);
+                                   const std::vector<double >&AccumulatedErrors);
 
   /**
    * @brief A function to compute the PID output velocity.
@@ -94,7 +94,6 @@ class ComputePID{
    */
   double calculatePID(double CurrentError, double PreviousError,
                       double AccumulatedError);
-
 };
 
 

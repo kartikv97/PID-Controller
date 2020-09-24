@@ -53,11 +53,14 @@ ComputePID::ComputePID(double P_gain, double I_gain, double D_gain) {
   kd = D_gain;
 }
 
-double ComputePID::calculateCurrentError(double TargetSetPoint, double ActualVelocity) {
+double ComputePID::calculateCurrentError(double TargetSetPoint,
+                                         double ActualVelocity) {
   return 0;
 }
 
-double ComputePID::calculateAccumulatedError(double CurrentError, std::vector<double> AccumulatedErrors) {
+double ComputePID::calculateAccumulatedError(double CurrentError,
+                                             const std::vector<double>&
+                                             AccumulatedErrors) {
   return 0;
 }
 

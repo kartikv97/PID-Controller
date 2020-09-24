@@ -94,7 +94,8 @@ TEST(PID_Test2, accumulatedErrorTest) {
 
   CurrentError = obj.calculateCurrentError(TargetVelocity, ActualVelocity);
 
-  AccumulatedError = obj.calculateAccumulatedError(CurrentError, AccumulatedErrors);
+  AccumulatedError = obj.calculateAccumulatedError(CurrentError,
+                                                   AccumulatedErrors);
 
   EXPECT_EQ(CurrentError, 2);
   EXPECT_EQ(AccumulatedError, 17);
@@ -125,12 +126,12 @@ TEST(PID_Test3, computeMethodTest) {
 
   CurrentError = obj.calculateCurrentError(TargetVelocity, ActualVelocity);
 
-  AccumulatedError = obj.calculateAccumulatedError(CurrentError, AccumulatedErrors);
+  AccumulatedError = obj.calculateAccumulatedError(CurrentError,
+                                                   AccumulatedErrors);
 
   PID_Output = obj.calculatePID(CurrentError, PreviousError, AccumulatedError);
 
   EXPECT_EQ(CurrentError, 2);
   EXPECT_EQ(AccumulatedError, 17);
   EXPECT_EQ(PID_Output, 49);
-
 }
