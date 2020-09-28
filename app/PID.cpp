@@ -7,8 +7,9 @@
  * @file PID.cpp
  *
  * @authors
- * Kartik Venkat (kartikv97) \n
- * Nidhi Bhojak (nbhojak07) \n
+ * Part 1:
+ * Kartik Venkat (kartikv97) ---- Driver \n
+ * Nidhi Bhojak (nbhojak07)  ---- Navigator\n
  *
  * @version 1.0
  *
