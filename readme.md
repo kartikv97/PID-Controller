@@ -7,6 +7,12 @@
 Kartik Venkat - Driver
 Nidhi Bhojak - Navigator
 ```
+## Authors Part 2
+```
+Govind Ajith Kumar- Driver
+Justin Albrecht - Navigator
+```
+
 ## Overview
 
 Simple starter C++ project with:
