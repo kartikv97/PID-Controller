@@ -45,9 +45,8 @@
  *
  * This file defines the methods declared in lib.hpp
  */
+#include <iostream>
 #include "lib.hpp"
-
-
 ComputePID::ComputePID(double P_gain, double I_gain, double D_gain) {
   kp = P_gain;
   ki = I_gain;
@@ -56,24 +55,33 @@ ComputePID::ComputePID(double P_gain, double I_gain, double D_gain) {
 
 double ComputePID::calculateCurrentError(double TargetSetPoint,
                                          double ActualVelocity) {
-  return 0;
+  double current_error;
+  current_error = TargetSetPoint - ActualVelocity;
+  return current_error;
 }
 
-double ComputePID::calculateAccumulatedError(double CurrentError,
-                                             const std::vector<double>&
-                                             AccumulatedErrors) {
-  return 0;
+double ComputePID::calculateAccumulatedError(
+    double CurrentError, const std::vector<double> &AccumulatedErrors) {
+  double acc_error;
+  double vec_error_sum { 0 };
+  for (auto vec_elem : AccumulatedErrors) {
+    vec_error_sum += vec_elem;
+  }
+  acc_error = CurrentError + vec_error_sum;
+  return acc_error;
 }
 
-double ComputePID::calculatePID(double CurrentError,
-                                double PreviousError,
-                                double AccumulatedError) {
+double ComputePID::calculatePID(double CurrentError, double PreviousError,
+  double AccumulatedError) {
   /*
-  P = kp * current error
-  I = ki * Accumulated error
-  D = kd * current error - previous error
-  */
-  return 0;
+   P = kp * current error
+   I = ki * Accumulated error
+   D = kd * current error - previous error
+   */
+  double gain;
+  gain = CurrentError * kp + AccumulatedError * ki
+      + (CurrentError - PreviousError) * kd;
+  return gain;
 }
 
 
