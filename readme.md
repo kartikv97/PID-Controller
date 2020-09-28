@@ -3,10 +3,10 @@
 [![Coverage Status](https://coveralls.io/repos/github/kartikv97/PID-Controller/badge.svg?branch=master)](https://coveralls.io/github/kartikv97/PID-Controller?branch=master)
 ---
 ## Authors Part 1
-'''
+```
 Kartik Venkat - Driver
 Nidhi Bhojak - Navigator
-'''
+```
 ## Overview
 
 Simple starter C++ project with:
